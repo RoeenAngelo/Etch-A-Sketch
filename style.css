@@ -4,3 +4,25 @@ body {
     align-items: center;
     flex-direction: column;
 }
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    width: 400px;
+    align-items: center;
+}
+
+.board {
+    border: 1px solid;
+    height: 500px;
+    width: 500px;
+    display: grid;
+    margin: 10px 10px;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+}
