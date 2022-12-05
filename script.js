@@ -1,7 +1,14 @@
 let color = 'black';
+let click = false;
 
 document.addEventListener('DOMContentLoaded', () => {
     createBoard(32) //default size
+
+    document.querySelector('body').addEventListener('click', (e) => {
+        if (e.target.tagName != 'BUTTON') {
+            click = !click;
+        }
+    })
     let btn_popup = document.querySelector('#popup');
     btn_popup.addEventListener('click', () => {
         let size = getSize();
@@ -39,12 +46,14 @@ function getSize() {
     }
 }
 
-function colorDiv() {
-    if (color == 'random') {
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
-    }
-    else {
-        this.style.backgroundColor = 'black';
+function colorDiv() {    
+    if (click) {
+        if (color == 'random') {
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`
+        }
+        else {
+            this.style.backgroundColor = 'black';
+        }
     }
 }
 
